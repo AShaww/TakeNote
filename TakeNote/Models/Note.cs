@@ -14,6 +14,8 @@ namespace TakeNote.Models
         public string Message { get; set; }
 
         [Display(Name = "Date Created")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedAt { get; set; }
 
         [Display(Name = "Is Complete?")]
