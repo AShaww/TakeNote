@@ -56,7 +56,7 @@ namespace TakeNote.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,CreatedAt,IsComplete")] Note note)
+        public async Task<IActionResult> Create([Bind("Id,Title,Message,CreatedAt,IsComplete")] Note note)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace TakeNote.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,CreatedAt,IsComplete")] Note note)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Message,CreatedAt,IsComplete")] Note note)
         {
             if (id != note.Id)
             {

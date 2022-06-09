@@ -5,6 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TakeNoteContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TakeNoteContext") ?? throw new InvalidOperationException("Connection string 'TakeNoteContext' not found.")));
 
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
