@@ -48,7 +48,7 @@ namespace TakeNote.Controllers
         // GET: Notes/Create
         public IActionResult Create()
         {
-            return View(new Note { CreatedAt = DateTime.Now });
+            return View();
         }
 
         // POST: Notes/Create
