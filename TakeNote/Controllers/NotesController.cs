@@ -22,9 +22,9 @@ namespace TakeNote.Controllers
         // GET: Notes
         public async Task<IActionResult> Index()
         {
-            return _context.Note != null ?
-                        View(await _context.Note.ToListAsync()) :
-                        Problem("Entity set 'TakeNoteContext.Note'  is null.");
+              return _context.Note != null ? 
+                          View(await _context.Note.ToListAsync()) :
+                          Problem("Entity set 'TakeNoteContext.Note'  is null.");
         }
 
         // GET: Notes/Details/5
@@ -48,7 +48,7 @@ namespace TakeNote.Controllers
         // GET: Notes/Create
         public IActionResult Create()
         {
-            return View();
+            return View(new Note { CreatedAt = DateTime.Now });
         }
 
         // POST: Notes/Create
@@ -150,14 +150,14 @@ namespace TakeNote.Controllers
             {
                 _context.Note.Remove(note);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool NoteExists(int id)
         {
-            return (_context.Note?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Note?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
